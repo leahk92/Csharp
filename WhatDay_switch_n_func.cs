@@ -26,7 +26,7 @@ namespace ConsoleApp9
                 v = InputInt(msg);
                 if (v >= start && v <= end)
                     break;
-                Console.WriteLine("다시입력해주세요");
+                Console.WriteLine("다시 입력해 주세요");
             }
             */
             /* 예시 2
