@@ -1,51 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practice_0323_Method
-{   //클래스
-    class Calc 
-    {
-        public static int Plus(int a, int b) //메소드 선언
-        {
-            Console.WriteLine(a + " " + b);
-            int res = a + b;
-            return res;
-        }
-    }
-
+namespace ClassesAndObjects
+{
     internal class Program
     {
-        static void PrintProfile(string name, string phone) //메소드 선언
-        {
-            if (name == "" || name == null)
-                return;
-            Console.WriteLine(name + " " + phone);
-        }
-        static int Minus(int a, int b) //메소드 선언
-        {
-            return a - b;
-        }
-
-        // **메인함수**
         static void Main(string[] args)
         {
-            //메소드 호출
-            int s = Calc.Plus(1, 2);
-            Console.WriteLine(s);
+            // 섹션 6: Object Oriented Programming (OOP)
 
-            //한 번에 적기
-            Console.WriteLine(Calc.Plus(1, 2));
+            /*생성자를 호출하여 개체를 초기화하고 레퍼런스를 객체에 반환, (변수)audi에 저장됨
+             - audi : Car 클래스를 참조하는 저장소
+             - new : 객체를 위해 메모리를 힙에 할당
+             - 괄호() : 생성자를 부르는 역할   */
+            //Car audi = new Car();
+            Car audi = new Car("Audi A4", 250, "blue");
+            Car bmw = new Car("BMW M5", 350);
 
-            Console.WriteLine(Minus(3, 4));
+            Car myCar = new Car();  // Default Constructor 만든 후
+            myCar.Details();
 
-            //
-            string n = null;
-            PrintProfile("홍길동", "010-1234-5678");
-            PrintProfile("", "010-1234-5678");
-            PrintProfile(n, "010-1234-5678");
+            /* 함수 호출 방법 : 변수명.메소드(); */
+            audi.Drive(); 
+            audi.Details();
+            
+            bmw.Drive();
+            bmw.Details();
+
+            Console.WriteLine("press 1 to stop to car!");
+            //int input = int.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+
+            if (input == "1")
+            {
+                audi.Stop();
+            }
+            else
+                Console.WriteLine("Car drive indefinitely");
+            
         }
     }
 }
