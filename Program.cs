@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -9,7 +9,29 @@ namespace ClassesAndObjects
 {
     internal class Program
     {
+
         static void Main(string[] args)
+        {
+            /* the public property */
+            Car myCar = new Car();
+            //Console.WriteLine(myCar.Name);
+            myCar.Name = "MyAudiA3";
+            myCar.Details();
+
+            /* Auto Implemented Property */
+            //myCar.MaxSpeed = 180;
+            //Console.WriteLine("Maxspeed is " + myCar.MaxSpeed);
+
+            /* Read-Only Property */
+            //Console.WriteLine("Maxspeed is " + myCar.MaxSpeed);
+
+            /* Write-Only Property */
+            myCar.MaxSpeed = 10;
+            Console.WriteLine("Maxspeed is ");
+        }
+
+
+        static void Main0(string[] args)
         {
             // 섹션 6: Object Oriented Programming (OOP)
 
@@ -23,6 +45,19 @@ namespace ClassesAndObjects
 
             Car myCar = new Car();  // Default Constructor 만든 후
             myCar.Details();
+
+            /*
+            myCar.SetName("Default Red Car with special name"); // Setter
+            myCar.Details();
+            myCar.SetName("");
+            myCar.Details();
+
+            Console.WriteLine(myCar.GetName()); // Getter
+            myCar.SetName("my best car");
+            Console.WriteLine("My car name is: " + myCar.GetName());
+
+            Console.WriteLine(myCar.GetHp());
+            */
 
             /* 함수 호출 방법 : 변수명.메소드(); */
             audi.Drive(); 
@@ -41,7 +76,6 @@ namespace ClassesAndObjects
             }
             else
                 Console.WriteLine("Car drive indefinitely");
-            
         }
     }
 }
