@@ -7,34 +7,36 @@ using System.Threading.Tasks;
 namespace ClassesAndObjects
 {
     internal class Car
-    {   
-        // private Member variable 멤버 변수
-        // fields 필드 : 데이터 저장(이름 저장)
+    {
+        /* private Member variable 멤버 변수 */
+        // fields 필드 : 데이터 저장(이름 저장) 
         private string name;    // access modifier private
         private int hp;
         private string color;
         //private int maxSpeed; 안 써도 됨, 내부적으로 생김(Auto Implemented Property)
         private int maxSpeed;
 
-        // Read-Only & Write-Only Properties : 읽기나 쓰기만으로 속성 제한
+        /* Read-Only & Write-Only Properties */
+        // 읽기나 쓰기만으로 속성 제한
 
         /*읽기 전용(Read-Only) : Setter 없음 - 일반적인 방법*/
-        //public int MaxSpeed { get; } = 10;
+        public int MaxSpeed { get; } = 10;
 
         /*쓰기 전용(Write-Only) : Getter 없음
          - 새로운 private 멤버 변수 필요*/
-        public int MaxSpeed
+        /*public int MaxSpeed
         {
             set
             {
                 this.maxSpeed = value;
             }
-        }
+        }*/
 
-        // Auto Implemented Property
+        /* Auto Implemented Property */
+        // prop 치고 2번 탭
         //public int MaxSpeed {  get; set; }
 
-        // the public property  (Setter, Getter 지우고)
+        /* the public property  (Setter, Getter 지우고) */
         /*데이터를 보호하기 위해 사용함 (데이터 필드를 공개하지 않고 property 이용)
          - public 데이터 멤버처럼 사용될 수 있지만
          - 실제로는 accessor라고 불리는 메소드를 이용하는 방법*/
@@ -76,7 +78,6 @@ namespace ClassesAndObjects
             return this.name;
             //return this.name + " suffix";
         }
-
         public int GetHp()
         {
             return this.hp;
@@ -84,7 +85,7 @@ namespace ClassesAndObjects
         }*/
 
 
-        // Constructor 생성자  |   Multiple Contructors
+        /* Constructor 생성자 */
         /*public Car()    
         {
             Console.WriteLine("Car was created");
@@ -98,6 +99,7 @@ namespace ClassesAndObjects
             maxSpeed = 150;
             Drive(); //메소드 함수 만든거 여기서 쓸 수 있음
         }
+        /* Multiple Contructors */
         // Partial Specification Constructor
         public Car(string name, int hp = 0)
         {
@@ -125,7 +127,7 @@ namespace ClassesAndObjects
         }*/
 
 
-        // Member Method    메소드 만들기
+        /* Member Method    메소드 만들기 */
         /*
         public void Drive()
         {
