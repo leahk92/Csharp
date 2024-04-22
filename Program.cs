@@ -9,8 +9,15 @@ namespace ClassesAndObjects
 {
     internal class Program
     {
+        static void Main(string[] args) // Memebers 클래스
+        {
+            Members member1 = new Members();
+            member1.Introducing(true);
+            Console.ReadKey();
+        }
 
-        static void Main(string[] args)
+
+        static void Main1(string[] args)
         {
             /* the public property */
             Car myCar = new Car();
@@ -23,11 +30,11 @@ namespace ClassesAndObjects
             //Console.WriteLine("Maxspeed is " + myCar.MaxSpeed);
 
             /* Read-Only Property */
-            //Console.WriteLine("Maxspeed is " + myCar.MaxSpeed);
+            Console.WriteLine("Maxspeed is " + myCar.MaxSpeed);
 
             /* Write-Only Property */
-            myCar.MaxSpeed = 10;
-            Console.WriteLine("Maxspeed is ");
+            //myCar.MaxSpeed = 10;
+            //Console.WriteLine("Maxspeed is ");
         }
 
 
